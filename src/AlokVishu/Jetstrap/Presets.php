@@ -1,13 +1,13 @@
 <?php
 
-namespace NascentAfrica\Jetstrap;
+namespace AlokVishu\Jetstrap;
 
 use Illuminate\Filesystem\Filesystem;
 
 /**
  * Class Presets
  *
- * @package NascentAfrica\Jetstrap
+ * @package AlokVishu\Jetstrap
  */
 class Presets
 {

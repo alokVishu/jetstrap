@@ -1,12 +1,12 @@
 <?php
 
-namespace NascentAfrica\Jetstrap\Console;
+namespace AlokVishu\Jetstrap\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
-use NascentAfrica\Jetstrap\Helpers;
-use NascentAfrica\Jetstrap\JetstrapFacade;
-use NascentAfrica\Jetstrap\Presets;
+use AlokVishu\Jetstrap\Helpers;
+use AlokVishu\Jetstrap\JetstrapFacade;
+use AlokVishu\Jetstrap\Presets;
 
 class InstallCommand extends Command
 {

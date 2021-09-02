@@ -154,7 +154,7 @@ To use Core Ui presets, simply call the `useCoreUi3` method within your AppServi
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use NascentAfrica\Jetstrap\JetstrapFacade;
+use AlokVishu\Jetstrap\JetstrapFacade;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -194,7 +194,7 @@ To use AdminLte presets, simply call the `useAdminLte3` method within your AppSe
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use NascentAfrica\Jetstrap\JetstrapFacade;
+use AlokVishu\Jetstrap\JetstrapFacade;
 
 class AppServiceProvider extends ServiceProvider
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace NascentAfrica\Jetstrap\Tests;
+namespace AlokVishu\Jetstrap\Tests;
 
-use NascentAfrica\Jetstrap\JetstrapFacade;
+use AlokVishu\Jetstrap\JetstrapFacade;
 
 class InstallCommandTest extends TestCase
 {

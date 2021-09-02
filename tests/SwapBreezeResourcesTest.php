@@ -1,11 +1,11 @@
 <?php
 
 
-namespace NascentAfrica\Jetstrap\Tests;
+namespace AlokVishu\Jetstrap\Tests;
 
 
 use Illuminate\Filesystem\Filesystem;
-use NascentAfrica\Jetstrap\JetstrapFacade;
+use AlokVishu\Jetstrap\JetstrapFacade;
 
 class SwapBreezeResourcesTest extends TestCase
 {

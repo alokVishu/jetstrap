@@ -1,10 +1,10 @@
 <?php
 
-namespace NascentAfrica\Jetstrap\Tests;
+namespace AlokVishu\Jetstrap\Tests;
 
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Foundation\Application;
-use NascentAfrica\Jetstrap\JetstrapServiceProvider;
+use AlokVishu\Jetstrap\JetstrapServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {
