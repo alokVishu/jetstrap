@@ -1,11 +1,17 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="h4 font-weight-bold">
-            {{ __('API Tokens') }}
-        </h2>
-    </x-slot>
+@extends('layouts/contentLayoutMaster')
 
-    <div>
-        @livewire('api.api-token-manager')
-    </div>
-</x-app-layout>
+@php
+$breadcrumbs = [['link' => 'home', 'name' => 'Home'], ['name' => 'API Tokens']];
+@endphp
+
+@section('title', 'API Tokens')
+
+
+@section('page-style')
+  {{-- Page Css files --}}
+  <link rel="stylesheet" href="{{ asset(mix('css/base/pages/authentication.css')) }}">
+@endsection
+
+@section('content')
+  @livewire('api.api-token-manager')
+@endsection

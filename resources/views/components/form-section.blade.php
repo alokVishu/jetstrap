@@ -1,29 +1,23 @@
 @props(['submit'])
 
-<div {{ $attributes->merge(['class' => 'row']) }}>
-    <div class="col-md-4">
-        <x-jet-section-title>
-            <x-slot name="title">{{ $title }}</x-slot>
-            <x-slot name="description">
-                <span class="small">
-                    {{ $description }}
-                </span>
-            </x-slot>
-        </x-jet-section-title>
-    </div>
-    <div class="col-md-8">
-        <div class="card shadow-sm">
-            <form wire:submit.prevent="{{ $submit }}">
-                <div class="card-body">
-                {{ $form }}
-                </div>
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">{{ $title }}</h4>
+  </div>
+  <div class="card-body">
+    <form wire:submit.prevent="{{ $submit }}">
 
-                @if (isset($actions))
-                    <div class="card-footer d-flex justify-content-end">
-                        {{ $actions }}
-                    </div>
-                @endif
-            </form>
+      <p class="card-text text-muted">
+        {{ $description }}
+      </p>
+
+      {{ $form }}
+
+      @if (isset($actions))
+        <div class="d-flex justify-content-end">
+          {{ $actions }}
         </div>
-    </div>
+      @endif
+    </form>
+  </div>
 </div>

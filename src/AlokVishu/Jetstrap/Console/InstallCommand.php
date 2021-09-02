@@ -41,17 +41,17 @@ class InstallCommand extends Command
 
         // Bootstrap Configuration...
         copy(__DIR__.'/../../../../stubs/webpack.mix.js', base_path('webpack.mix.js'));
-        copy(__DIR__.'/../../../../stubs/webpack.config.js', base_path('webpack.config.js'));
+        // copy(__DIR__.'/../../../../stubs/webpack.config.js', base_path('webpack.config.js'));
 
         // Assets...
         (new Filesystem)->deleteDirectory(resource_path('css'));
         (new Filesystem)->ensureDirectoryExists(resource_path('sass'));
-        (new Filesystem)->ensureDirectoryExists(resource_path('js'));
+        // (new Filesystem)->ensureDirectoryExists(resource_path('js'));
         (new Filesystem)->ensureDirectoryExists(resource_path('views'));
-        (new Filesystem)->copyDirectory(__DIR__.'/../../../../stubs/resources/js', resource_path('js'));
+        // (new Filesystem)->copyDirectory(__DIR__.'/../../../../stubs/resources/js', resource_path('js'));
         (new Filesystem)->copyDirectory(__DIR__.'/../../../../stubs/resources/sass', resource_path('sass'));
 
-        copy(__DIR__.'/../../../../stubs/resources/views/welcome.blade.php', resource_path('views/welcome.blade.php'));
+        // copy(__DIR__.'/../../../../stubs/resources/views/welcome.blade.php', resource_path('views/welcome.blade.php'));
 
         // Install Stack...
         if ($this->argument('stack') === 'livewire') {
@@ -80,14 +80,15 @@ class InstallCommand extends Command
         $this->line('');
         $this->info('Installing livewire stack...');
 
-        Helpers::updateNodePackages(function ($packages) {
-            return [
-                'alpinejs' => '^3.0.6',
-                'bootstrap' => '^4.6.0',
-                'jquery' => '^3.5.1',
-                'popper.js' => '^1.16.1'
-            ] + $packages;
-        });
+         copy(__DIR__.'/../../../../stubs/package.json', base_path('package.json'));
+        // Helpers::updateNodePackages(function ($packages) {
+        //     return [
+        //         'alpinejs' => '^3.0.6',
+        //         'bootstrap' => '^4.6.0',
+        //         'jquery' => '^3.5.1',
+        //         'popper.js' => '^1.16.1'
+        //     ] + $packages;
+        // });
 
         // Directories...
         (new Filesystem)->ensureDirectoryExists(resource_path('views/api'));
@@ -96,19 +97,19 @@ class InstallCommand extends Command
         (new Filesystem)->ensureDirectoryExists(resource_path('views/profile'));
 
         // Layouts
-        (new Filesystem)->copyDirectory(__DIR__.'/../../../../stubs/livewire/resources/views/layouts', resource_path('views/layouts'));
+        // (new Filesystem)->copyDirectory(__DIR__.'/../../../../stubs/livewire/resources/views/layouts', resource_path('views/layouts'));
         (new Filesystem)->copyDirectory(__DIR__.'/../../../../stubs/livewire/resources/views/api', resource_path('views/api'));
         (new Filesystem)->copyDirectory(__DIR__.'/../../../../stubs/livewire/resources/views/profile', resource_path('views/profile'));
         (new Filesystem)->copyDirectory(__DIR__.'/../../../../stubs/livewire/resources/views/auth', resource_path('views/auth'));
 
         // Single Blade Views...
-        copy(__DIR__.'/../../../../stubs/livewire/resources/views/dashboard.blade.php', resource_path('views/dashboard.blade.php'));
-        copy(__DIR__.'/../../../../stubs/livewire/resources/views/navigation-menu.blade.php', resource_path('views/navigation-menu.blade.php'));
+        // copy(__DIR__.'/../../../../stubs/livewire/resources/views/dashboard.blade.php', resource_path('views/dashboard.blade.php'));
+        // copy(__DIR__.'/../../../../stubs/livewire/resources/views/navigation-menu.blade.php', resource_path('views/navigation-menu.blade.php'));
         copy(__DIR__.'/../../../../stubs/livewire/resources/views/terms.blade.php', resource_path('views/terms.blade.php'));
         copy(__DIR__.'/../../../../stubs/livewire/resources/views/policy.blade.php', resource_path('views/policy.blade.php'));
 
         // Assets...
-        (new Filesystem)->copy(__DIR__.'/../../../../stubs/resources/js/app.js', resource_path('js/app.js'));
+        // (new Filesystem)->copy(__DIR__.'/../../../../stubs/resources/js/app.js', resource_path('js/app.js'));
 
         // Publish...
         $this->callSilent('vendor:publish', ['--tag' => 'jetstrap-views', '--force' => true]);

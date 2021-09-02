@@ -1,21 +1,18 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="h4 font-weight-bold">
-            {{ __('Team Settings') }}
-        </h2>
-    </x-slot>
+@extends('layouts.contentLayoutMaster')
 
-    <div>
-        @livewire('teams.update-team-name-form', ['team' => $team])
+@php
+$breadcrumbs = [['link' => 'home', 'name' => 'Home'], ['name' => 'Team Settings']];
+@endphp
 
-        @livewire('teams.team-member-manager', ['team' => $team])
+@section('title', 'Team Settings')
 
-        @if (Gate::check('delete', $team) && ! $team->personal_team)
-            <x-jet-section-border />
+@section('content')
+  @livewire('teams.update-team-name-form', ['team' => $team])
 
-            <div>
-                @livewire('teams.delete-team-form', ['team' => $team])
-            </div>
-        @endif
-    </div>
-</x-app-layout>
+  @livewire('teams.team-member-manager', ['team' => $team])
+
+  @if (Gate::check('delete', $team) && !$team->personal_team)
+
+    @livewire('teams.delete-team-form', ['team' => $team])
+  @endif
+@endsection

@@ -1,15 +1,26 @@
-<x-guest-layout>
-    <div class="row justify-content-center pt-4">
-        <div class="col-6">
-            <div>
-                <x-jet-authentication-card-logo />
-            </div>
+@extends('layouts/FullLayoutMaster')
 
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    {!! $terms !!}
-                </div>
-            </div>
+@section('title', 'Login')
+
+@section('page-style')
+  {{-- Page Css files --}}
+  <link rel="stylesheet" href="{{ asset(mix('css/base/pages/authentication.css')) }}">
+@endsection
+
+@section('content')
+  <div class="auth-wrapper auth-basic px-2">
+    <div class="auth-inner my-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="mb-2">
+            <x-jet-authentication-card-logo />
+          </div>
+
+          <div>
+            {!! $terms !!}
+          </div>
         </div>
+      </div>
     </div>
-</x-guest-layout>
+  </div>
+@endsection

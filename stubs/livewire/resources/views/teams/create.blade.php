@@ -1,11 +1,9 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="h4 font-weight-bold">
-            {{ __('Create Team') }}
-        </h2>
-    </x-slot>
+@extends('layouts.contentLayoutMaster')
+@php
+$breadcrumbs = [['link' => 'home', 'name' => 'Home'], ['name' => 'Create Team']];
+@endphp
+@section('title', 'Create Team')
 
-    <div>
-        @livewire('teams.create-team-form')
-    </div>
-</x-app-layout>
+@section('content')
+  @livewire('teams.create-team-form')
+@endsection

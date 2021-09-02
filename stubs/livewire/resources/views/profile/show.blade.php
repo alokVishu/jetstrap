@@ -1,35 +1,30 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="h4 font-weight-bold">
-            {{ __('Profile') }}
-        </h2>
-    </x-slot>
+@extends('layouts.contentLayoutMaster')
 
-    <div>
-        @if (Laravel\Fortify\Features::canUpdateProfileInformation())
-            @livewire('profile.update-profile-information-form')
+@php
+$breadcrumbs = [['link' => 'home', 'name' => 'Home'], ['link' => 'javascript:void(0)', 'name' => 'User'], ['name' => 'Profile']];
+@endphp
 
-            <x-jet-section-border />
-        @endif
+@section('title', 'Profile')
 
-        @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
-            @livewire('profile.update-password-form')
 
-            <x-jet-section-border />
-        @endif
+@section('content')
 
-        @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication())
-            @livewire('profile.two-factor-authentication-form')
+  @if (Laravel\Fortify\Features::canUpdateProfileInformation())
+    @livewire('profile.update-profile-information-form')
+  @endif
 
-            <x-jet-section-border />
-        @endif
+  @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
+    @livewire('profile.update-password-form')
+  @endif
 
-        @livewire('profile.logout-other-browser-sessions-form')
+  @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication())
+    @livewire('profile.two-factor-authentication-form')
+  @endif
 
-        @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())
-            <x-jet-section-border />
+  @livewire('profile.logout-other-browser-sessions-form')
 
-            @livewire('profile.delete-user-form')
-        @endif
-    </div>
-</x-app-layout>
+  @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())
+    @livewire('profile.delete-user-form')
+  @endif
+
+@endsection

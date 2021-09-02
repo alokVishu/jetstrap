@@ -1,8 +1,8 @@
 # Jetstrap
 
-[![Latest Stable Version](https://poser.pugx.org/nascent-africa/jetstrap/v)](//packagist.org/packages/nascent-africa/jetstrap)
-[![Total Downloads](https://poser.pugx.org/nascent-africa/jetstrap/downloads)](//packagist.org/packages/nascent-africa/jetstrap)
-[![License](https://poser.pugx.org/nascent-africa/jetstrap/license)](//packagist.org/packages/nascent-africa/jetstrap)
+[![Latest Stable Version](https://poser.pugx.org/alok-vishu/jetstrap/v)](//packagist.org/packages/alok-vishu/jetstrap)
+[![Total Downloads](https://poser.pugx.org/alok-vishu/jetstrap/downloads)](//packagist.org/packages/alok-vishu/jetstrap)
+[![License](https://poser.pugx.org/alok-vishu/jetstrap/license)](//packagist.org/packages/alok-vishu/jetstrap)
 
   
 ## Description
@@ -57,7 +57,7 @@ php artisan jetstream:install inertia --teams
 Use Composer to install Jetstrap into your new Laravel project as dev dependency:
 
 ```
-composer require nascent-africa/jetstrap --dev
+composer require alok-vishu/jetstrap --dev
 ```
 
 Regardless how you install Jetstream, Jetstrap commands are very similar to that
@@ -277,4 +277,4 @@ composer tests
 
 
 ## License
-Jetstrap is open-sourced software licensed under the [MIT license](https://github.com/nascent-africa/jetstrap/blob/master/LICENSE).
+Jetstrap is open-sourced software licensed under the [MIT license](https://github.com/alok-vishu/jetstrap/blob/master/LICENSE).
