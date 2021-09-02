@@ -39,11 +39,40 @@ class InstallCommand extends Command
             (new Filesystem)->delete(base_path('tailwind.config.js'));
         }
 
+        if((new Filesystem)->exists(resource_path('views/dashboard.blade.php'))){
+          (new Filesystem)->delete(resource_path('views/dashboard.blade.php'));
+        }
+
+        if((new Filesystem)->exists(resource_path('views/navigation-menu.blade'))){
+          (new Filesystem)->delete(resource_path('views/navigation-menu.blade'));
+        }
+
+        if((new Filesystem)->exists(resource_path('views/welcome.blade.php'))){
+          (new Filesystem)->delete(resource_path('views/welcome.blade.php'));
+        }
+
+        if((new Filesystem)->exists(resource_path('views/layouts/app.blade.php'))){
+          (new Filesystem)->delete(resource_path('views/layouts/app.blade.php'));
+        }
+
+        if((new Filesystem)->exists(resource_path('views/layouts/guest.blade.php'))){
+          (new Filesystem)->delete(resource_path('views/layouts/guest.blade.php'));
+        }
+
+        if((new Filesystem)->exists(resource_path('js/app.js'))){
+          (new Filesystem)->delete(resource_path('js/app.js'));
+        }
+
+        if((new Filesystem)->exists(resource_path('js/bootstrap.js'))){
+          (new Filesystem)->delete(resource_path('js/bootstrap.js'));
+        }
+
         // Bootstrap Configuration...
         copy(__DIR__.'/../../../../stubs/webpack.mix.js', base_path('webpack.mix.js'));
         // copy(__DIR__.'/../../../../stubs/webpack.config.js', base_path('webpack.config.js'));
 
         // Assets...
+        (new Filesystem)->deleteDirectory(base_path('app/View'));
         (new Filesystem)->deleteDirectory(resource_path('css'));
         (new Filesystem)->ensureDirectoryExists(resource_path('sass'));
         // (new Filesystem)->ensureDirectoryExists(resource_path('js'));
@@ -93,7 +122,7 @@ class InstallCommand extends Command
         // Directories...
         (new Filesystem)->ensureDirectoryExists(resource_path('views/api'));
         (new Filesystem)->ensureDirectoryExists(resource_path('views/auth'));
-        (new Filesystem)->ensureDirectoryExists(resource_path('views/layouts'));
+        // (new Filesystem)->ensureDirectoryExists(resource_path('views/layouts'));
         (new Filesystem)->ensureDirectoryExists(resource_path('views/profile'));
 
         // Layouts
