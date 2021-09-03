@@ -44,8 +44,8 @@ class InstallCommand extends Command
           (new Filesystem)->delete(resource_path('views/dashboard.blade.php'));
         }
 
-        if((new Filesystem)->exists(resource_path('views/navigation-menu.blade'))){
-          (new Filesystem)->delete(resource_path('views/navigation-menu.blade'));
+        if((new Filesystem)->exists(resource_path('views/navigation-menu.blade.php'))){
+          (new Filesystem)->delete(resource_path('views/navigation-menu.blade.php'));
         }
 
         if((new Filesystem)->exists(resource_path('views/welcome.blade.php'))){
