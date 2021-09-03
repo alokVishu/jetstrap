@@ -4,9 +4,6 @@ namespace AlokVishu\Jetstrap\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
-use AlokVishu\Jetstrap\Helpers;
-use AlokVishu\Jetstrap\JetstrapFacade;
-use AlokVishu\Jetstrap\Presets;
 use Illuminate\Support\Str;
 
 class InstallCommand extends Command
@@ -137,7 +134,6 @@ class InstallCommand extends Command
 
         $this->line('');
         $this->info('Rounding up...');
-        // $this->installPreset();
 
         $this->line('');
         $this->info('Bootstrap scaffolding swapped for livewire successfully.');
@@ -156,31 +152,6 @@ class InstallCommand extends Command
 
         (new Filesystem)->copyDirectory(__DIR__.'/../../../../stubs/livewire/resources/views/teams', resource_path('views/teams'));
     }
-
-
-    /**
-     * Install third party presets.
-     *
-     * @return void
-     */
-    // protected function installPreset()
-    // {
-    //     // Check for preset usage...
-    //     if ($preset = JetstrapFacade::getPreset()) {
-    //         switch ($preset) {
-    //             case Presets::CORE_UI_3:
-    //                 $this->line('');
-    //                 $this->info('Setting up Core Ui 3.');
-    //                 Presets::setupCoreUi3($this->argument('stack'));
-    //                 break;
-    //             case Presets::ADMIN_LTE_3:
-    //                 $this->line('');
-    //                 $this->info('Setting up AdminLte 3.');
-    //                 Presets::setupAdminLte3($this->argument('stack'));
-    //                 break;
-    //         }
-    //     }
-    // }
 
     /**
      * Replace a given string within a given file.
