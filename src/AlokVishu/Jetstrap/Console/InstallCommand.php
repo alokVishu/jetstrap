@@ -68,6 +68,10 @@ class InstallCommand extends Command
         // "/" Route...
         $this->replaceInFile('/dashboard', '/', app_path('Providers/RouteServiceProvider.php'));
 
+        // add components in navbar
+        $this->replaceInFile('{{-- <x-jet-switchable-team :team="$team" /> --}}', '<x-jet-switchable-team :team="$team" />', resource_path('views/navbar.blade.php'));
+
+
         // Bootstrap Configuration...
         copy(__DIR__.'/../../../../stubs/webpack.mix.js', base_path('webpack.mix.js'));
 
