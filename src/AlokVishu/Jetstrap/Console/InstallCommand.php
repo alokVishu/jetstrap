@@ -7,6 +7,7 @@ use Illuminate\Filesystem\Filesystem;
 use AlokVishu\Jetstrap\Helpers;
 use AlokVishu\Jetstrap\JetstrapFacade;
 use AlokVishu\Jetstrap\Presets;
+use Illuminate\Support\Str;
 
 class InstallCommand extends Command
 {
@@ -67,12 +68,16 @@ class InstallCommand extends Command
           (new Filesystem)->delete(resource_path('js/bootstrap.js'));
         }
 
+        // "/" Route...
+        $this->replaceInFile('/dashboard', '/', app_path('Providers/RouteServiceProvider.php'));
+
         // Bootstrap Configuration...
         copy(__DIR__.'/../../../../stubs/webpack.mix.js', base_path('webpack.mix.js'));
         // copy(__DIR__.'/../../../../stubs/webpack.config.js', base_path('webpack.config.js'));
 
+        // app/views
+        (new Filesystem)->deleteDirectory(app_path('View'));
         // Assets...
-        (new Filesystem)->deleteDirectory(base_path('app/View'));
         (new Filesystem)->deleteDirectory(resource_path('css'));
         (new Filesystem)->ensureDirectoryExists(resource_path('sass'));
         // (new Filesystem)->ensureDirectoryExists(resource_path('js'));
@@ -80,6 +85,16 @@ class InstallCommand extends Command
         // (new Filesystem)->copyDirectory(__DIR__.'/../../../../stubs/resources/js', resource_path('js'));
         (new Filesystem)->copyDirectory(__DIR__.'/../../../../stubs/resources/sass', resource_path('sass'));
 
+
+        // add livewire script file in template
+        if (! Str::contains(file_get_contents(resource_path('views/panels/scripts.blade.php')), "'modals'")) {
+            (new Filesystem)->append(resource_path('views/panels/scripts.blade.php'), $this->livewireScriptDefinition());
+        }
+
+        // add livewire style file in template
+        if (! Str::contains(file_get_contents(resource_path('views/panels/styles.blade.php')), "'@livewireStyles'")) {
+            (new Filesystem)->append(resource_path('views/panels/styles.blade.php'), $this->livewireStyleDefinition());
+        }
         // copy(__DIR__.'/../../../../stubs/resources/views/welcome.blade.php', resource_path('views/welcome.blade.php'));
 
         // Install Stack...
@@ -378,5 +393,48 @@ class InstallCommand extends Command
                     break;
             }
         }
+    }
+
+    /**
+     * Replace a given string within a given file.
+     *
+     * @param  string  $search
+     * @param  string  $replace
+     * @param  string  $path
+     * @return void
+     */
+    protected function replaceInFile($search, $replace, $path)
+    {
+        file_put_contents($path, str_replace($search, $replace, file_get_contents($path)));
+    }
+
+      /**
+     * Get the livewire script definition(s) that should be installed for Livewire.
+     *
+     * @return string
+     */
+    protected function livewireScriptDefinition()
+    {
+        return <<<'EOF'
+
+@stack('modals')
+@livewireScripts
+<script src="{{ asset(mix('vendors/js/alpinejs/alpine.js')) }}"></script>
+
+EOF;
+    }
+
+      /**
+     * Get the livewire style definition(s) that should be installed for Livewire.
+     *
+     * @return string
+     */
+    protected function livewireStyleDefinition()
+    {
+        return <<<'EOF'
+
+@livewireStyles
+
+EOF;
     }
 }
