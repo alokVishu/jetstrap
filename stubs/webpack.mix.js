@@ -85,6 +85,21 @@ mix
   .js("resources/js/core/app-menu.js", "public/js/core")
   .js("resources/js/core/app.js", "public/js/core")
   .js("resources/assets/js/scripts.js", "public/js/core")
+  .sass(
+    "resources/scss/base/themes/dark-layout.scss",
+    "public/css/base/themes",
+    { sassOptions }
+  )
+  .sass(
+    "resources/scss/base/themes/bordered-layout.scss",
+    "public/css/base/themes",
+    { sassOptions }
+  )
+  .sass(
+    "resources/scss/base/themes/semi-dark-layout.scss",
+    "public/css/base/themes",
+    { sassOptions }
+  )
   .sass("resources/scss/core.scss", "public/css", { sassOptions })
   .sass("resources/scss/overrides.scss", "public/css", { sassOptions })
   .sass("resources/scss/base/custom-rtl.scss", "public/css-rtl", {
