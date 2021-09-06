@@ -7,7 +7,7 @@
 ##### Specially customized Laravel jetstream's scaffolding for [Vuexy-html-laravel-template](https://themeforest.net/item/vuexy-vuejs-html-laravel-admin-dashboard-template/23328599).
   
 ## Description
-Laravel Jetstream is designed using Tailwind CSS and offers your choice of Livewire or Inertia scaffolding. We have remove the Tailwind css dependency and modify the Livewire scaffolding as per our template theme. ==Please note we have not provided Inertia  scaffolding yet.==
+Laravel Jetstream is designed using Tailwind CSS and offers your choice of Livewire or Inertia scaffolding. We have remove the Tailwind css dependency and modify the Livewire scaffolding as per our template theme. __Please note we have not provided Inertia  scaffolding yet__.
 
 Jetstrap is a lightweight laravel 8 package that focuses on the `VIEW` side of [Jetstream](https://github.com/laravel/jetstream) package installed in your Laravel application, so when a swap is performed, the `Action`, `MODEL`, `CONTROLLER`, `Component` and `Action` classes of your project is still 100% handled by Laravel development team with no added layer of complexity.
 
@@ -33,7 +33,7 @@ You may use Composer to install Jetstream into your new Laravel project:
 composer require laravel/jetstream
 ```
 
-If you choose to install Jetstream through Composer, you should run the jetstream:install Artisan command. This command accepts the name of the stack you prefer (livewire). You are highly encouraged to read through the entire documentation of Livewire before beginning your Jetstream project. In addition, you may use the ==--teams== switch to enable team support:
+If you choose to install Jetstream through Composer, you should run the jetstream:install Artisan command. This command accepts the name of the stack you prefer (livewire). You are highly encouraged to read through the entire documentation of Livewire before beginning your Jetstream project. In addition, you may use the __--teams__ switch to enable team support:
 
 #### Install Jetstream With Livewire
 
