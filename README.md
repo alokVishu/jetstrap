@@ -4,8 +4,10 @@
 [![Total Downloads](https://poser.pugx.org/alok-vishu/jetstrap/downloads)](//packagist.org/packages/alok-vishu/jetstrap)
 [![License](https://poser.pugx.org/alok-vishu/jetstrap/license)](//packagist.org/packages/alok-vishu/jetstrap)
 
+##### Specially customized Laravel jetstream's scaffolding for [Vuexy-html-laravel-template](https://themeforest.net/item/vuexy-vuejs-html-laravel-admin-dashboard-template/23328599).
   
 ## Description
+Laravel Jetstream is designed using Tailwind CSS and offers your choice of Livewire or Inertia scaffolding. We have remove the Tailwind css dependency and modify the Livewire scaffolding as per our template theme. ==Please note we have not provided Inertia  scaffolding yet.==
 
 Jetstrap is a lightweight laravel 8 package that focuses on the `VIEW` side of [Jetstream](https://github.com/laravel/jetstream) package installed in your Laravel application, so when a swap is performed, the `Action`, `MODEL`, `CONTROLLER`, `Component` and `Action` classes of your project is still 100% handled by Laravel development team with no added layer of complexity.
 
@@ -31,11 +33,16 @@ You may use Composer to install Jetstream into your new Laravel project:
 composer require laravel/jetstream
 ```
 
-If you choose to install Jetstream through Composer, you should run the jetstream:install Artisan command. This command accepts the name of the stack you prefer (livewire or inertia). You are highly encouraged to read through the entire documentation of Livewire or Inertia before beginning your Jetstream project. In addition, you may use the --teams switch to enable team support:
+If you choose to install Jetstream through Composer, you should run the jetstream:install Artisan command. This command accepts the name of the stack you prefer (livewire). You are highly encouraged to read through the entire documentation of Livewire before beginning your Jetstream project. In addition, you may use the ==--teams== switch to enable team support:
 
 #### Install Jetstream With Livewire
 
-```
+```bash
+
+php artisan jetstream:install livewire
+
+or 
+
 php artisan jetstream:install livewire --teams
 ```
 
@@ -71,7 +78,9 @@ This will publish overrides to enable Bootstrap like the good old days!
 After installing Jetstrap and swapping Jetstream resources, remove tailwindCSS and its dependencies if any from your package.json and then install and build your NPM dependencies and migrate your database:
 
 ```
-npm install && npm run dev
+npm install && npm run mix
+
+yarn && yarn mix 
 
 php artisan migrate
 ```
