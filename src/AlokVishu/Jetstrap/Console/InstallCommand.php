@@ -79,9 +79,7 @@ class InstallCommand extends Command
         (new Filesystem)->deleteDirectory(app_path('View'));
         // Assets...
         (new Filesystem)->deleteDirectory(resource_path('css'));
-        (new Filesystem)->ensureDirectoryExists(resource_path('sass'));
         (new Filesystem)->ensureDirectoryExists(resource_path('views'));
-        (new Filesystem)->copyDirectory(__DIR__.'/../../../../stubs/resources/sass', resource_path('sass'));
 
 
         // add livewire script file in template
