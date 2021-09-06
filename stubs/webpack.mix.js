@@ -35,28 +35,28 @@ const sassOptions = {
 };
 
 // plugins Core stylesheets
-mixAssetsDir("sass/base/plugins/**/!(_)*.scss", (src, dest) =>
+mixAssetsDir("scss/base/plugins/**/!(_)*.scss", (src, dest) =>
   mix.sass(
     src,
-    dest.replace(/(\\|\/)sass(\\|\/)/, "$1css$2").replace(/\.scss$/, ".css"),
+    dest.replace(/(\\|\/)scss(\\|\/)/, "$1css$2").replace(/\.scss$/, ".css"),
     { sassOptions }
   )
 );
 
 // pages Core stylesheets
-mixAssetsDir("sass/base/pages/**/!(_)*.scss", (src, dest) =>
+mixAssetsDir("scss/base/pages/**/!(_)*.scss", (src, dest) =>
   mix.sass(
     src,
-    dest.replace(/(\\|\/)sass(\\|\/)/, "$1css$2").replace(/\.scss$/, ".css"),
+    dest.replace(/(\\|\/)scss(\\|\/)/, "$1css$2").replace(/\.scss$/, ".css"),
     { sassOptions }
   )
 );
 
 // Core stylesheets
-mixAssetsDir("sass/base/core/**/!(_)*.scss", (src, dest) =>
+mixAssetsDir("scss/base/core/**/!(_)*.scss", (src, dest) =>
   mix.sass(
     src,
-    dest.replace(/(\\|\/)sass(\\|\/)/, "$1css$2").replace(/\.scss$/, ".css"),
+    dest.replace(/(\\|\/)scss(\\|\/)/, "$1css$2").replace(/\.scss$/, ".css"),
     { sassOptions }
   )
 );
@@ -85,9 +85,9 @@ mix
   .js("resources/js/core/app-menu.js", "public/js/core")
   .js("resources/js/core/app.js", "public/js/core")
   .js("resources/assets/js/scripts.js", "public/js/core")
-  .sass("resources/sass/core.scss", "public/css", { sassOptions })
-  .sass("resources/sass/overrides.scss", "public/css", { sassOptions })
-  .sass("resources/sass/base/custom-rtl.scss", "public/css-rtl", {
+  .sass("resources/scss/core.scss", "public/css", { sassOptions })
+  .sass("resources/scss/overrides.scss", "public/css", { sassOptions })
+  .sass("resources/scss/base/custom-rtl.scss", "public/css-rtl", {
     sassOptions,
   })
   .sass("resources/assets/scss/style-rtl.scss", "public/css-rtl", {
