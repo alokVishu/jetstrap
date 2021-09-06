@@ -2,19 +2,33 @@
 
   
 
+  
+
 [![Latest Stable Version](https://poser.pugx.org/alok-vishu/jetstrap/v)](//packagist.org/packages/alok-vishu/jetstrap)
 
+  
+
 [![Total Downloads](https://poser.pugx.org/alok-vishu/jetstrap/downloads)](//packagist.org/packages/alok-vishu/jetstrap)
+
+  
 
 [![License](https://poser.pugx.org/alok-vishu/jetstrap/license)](//packagist.org/packages/alok-vishu/jetstrap)
 
   
 
+  
+
 ##### Specially customized Laravel jetstream's scaffolding for [Vuexy-html-laravel-template](https://themeforest.net/item/vuexy-vuejs-html-laravel-admin-dashboard-template/23328599). It does not work with another project.
+
+  
 
 ## Description
 
+  
+
 Laravel Jetstream is designed using Tailwind CSS and offers your choice of Livewire or Inertia scaffolding. We have remove the Tailwind css dependency and modify the Livewire scaffolding as per our template theme. __Please note we have not provided Inertia scaffolding yet__.
+
+  
 
   
 
@@ -22,27 +36,46 @@ Vuexy Jetstrap is a lightweight laravel 8 package that focuses on the `VIEW` sid
 
   
 
+  
+
 ## Table of Content
+
+  
 
 *  [Installation](#installation)
 
+  
+
 +  [Installing Jetstream](#installing-jetstream)
+
+  
 
 -  [Install Jetstream With Livewire](#install-jetstream-with-livewire)
 
+  
+
 +  [Install Jetstrap](#install-jetstrap)
+
+  
 
 +  [Finalizing The Installation](#finalizing-the-installation)
 
+  
+
 +  [Extras](#extras)
 
--  [Pagination](#pagination)
+  
 
-*  [Testing](#testing)
+-  [Pagination](#pagination)
+  
 
 *  [License](#license)
 
+  
+
 ## Installation
+
+  
 
   
 
@@ -50,15 +83,20 @@ Vuexy Jetstrap is a lightweight laravel 8 package that focuses on the `VIEW` sid
 
   
 
+  
+
 You may use Composer to install Jetstream into your new Laravel project:
 
   
 
-```
+  
 
+```
 composer require laravel/jetstream
 
 ```
+
+  
 
   
 
@@ -66,21 +104,19 @@ If you choose to install Jetstream through Composer, you should run the jetstrea
 
   
 
+  
+
 #### Install Jetstream With Livewire
+
+  
 
   
 
 ```bash
 
-  
-
 php artisan jetstream:install livewire
 
-  
-
 or
-
-  
 
 php artisan jetstream:install livewire --teams
 
@@ -88,7 +124,11 @@ php artisan jetstream:install livewire --teams
 
   
 
+  
+
 ### Install Jetstrap
+
+  
 
   
 
@@ -96,17 +136,26 @@ Use Composer to install Jetstrap into your new Laravel project as dev dependency
 
   
 
+  
+
 ```
 
 composer require alok-vishu/jetstrap --dev
+ 
 
 ```
 
   
 
+  
+
 Regardless how you install Jetstream, Jetstrap commands are very similar to that
 
+  
+
 of Jetstream as it accepts the name of the stack you would like to swap (livewire).
+
+  
 
   
 
@@ -114,23 +163,26 @@ of Jetstream as it accepts the name of the stack you would like to swap (livewir
 
   
 
+  
+
 You are highly encouraged to read through the entire documentation of [Jetstream](https://jetstream.laravel.com/1.x/introduction.html)
+
+  
 
 before beginning your Jetstrap project. In addition, you may use the `--teams` switch to swap team assets just like you would in Jetstream:
 
   
 
-```bash
-
   
+
+```bash
 
 php artisan jetstrap:swap livewire
 
-  
 
 or
 
-  
+
 
 php artisan jetstrap:swap livewire --teams
 
@@ -138,7 +190,11 @@ php artisan jetstrap:swap livewire --teams
 
   
 
+  
+
 This will publish overrides to enable Bootstrap like the good old days!
+
+  
 
   
 
@@ -146,28 +202,33 @@ This will publish overrides to enable Bootstrap like the good old days!
 
   
 
+  
+
 After installing Jetstrap and swapping Jetstream resources, remove tailwindCSS and its dependencies if any from your package.json and then install and build your NPM dependencies and migrate your database:
+
+  
 
   
 
 ```
 
 npm install && npm run mix
-
   
 
 yarn && yarn mix
 
-  
 
 php artisan migrate
 
 ```
 
   
+
   
 
 ### Extras
+
+  
 
   
 
@@ -175,62 +236,48 @@ php artisan migrate
 
   
 
+  
+
 It is also important to point out that Laravel 8 still includes pagination views built using Bootstrap CSS. To use these views instead of the default Tailwind views, you may call the paginator's useBootstrap method within your AppServiceProvider:
+
+  
 
   
 
 ```php
 
+  
+
 <?php
 
-  
 
 namespace  App\Providers;
 
-  
-
 use Illuminate\Support\ServiceProvider;
-
 use Illuminate\Pagination\Paginator;
 
-  
-
 class  AppServiceProvider  extends  ServiceProvider
-
 {
 
 /**
-
 * Register any application services.
-
 *
-
 * @return  void
-
 */
 
 public  function  register()
-
 {
 
 //
-
+  
 }
 
-  
-
 /**
-
 * Bootstrap any application services.
-
-*
-
 * @return  void
-
 */
 
 public  function  boot()
-
 {
 
 Paginator::useBootstrap();
@@ -240,8 +287,9 @@ Paginator::useBootstrap();
 }
 
 ```
-  
 
 ## License
+
+  
 
 Jetstrap is open-sourced software licensed under the [MIT license](https://github.com/alok-vishu/jetstrap/blob/master/LICENSE).
