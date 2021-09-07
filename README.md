@@ -4,15 +4,15 @@
 
   
 
-[![Latest Stable Version](https://poser.pugx.org/alok-vishu/jetstrap/v)](//packagist.org/packages/alok-vishu/jetstrap)
+[![Latest Stable Version](https://poser.pugx.org/Pixinvent/jetstrap-vuexy/v)](//packagist.org/packages/Pixinvent/jetstrap-vuexy)
 
   
 
-[![Total Downloads](https://poser.pugx.org/alok-vishu/jetstrap/downloads)](//packagist.org/packages/alok-vishu/jetstrap)
+[![Total Downloads](https://poser.pugx.org/Pixinvent/jetstrap-vuexy/downloads)](//packagist.org/packages/Pixinvent/jetstrap-vuexy)
 
   
 
-[![License](https://poser.pugx.org/alok-vishu/jetstrap/license)](//packagist.org/packages/alok-vishu/jetstrap)
+[![License](https://poser.pugx.org/Pixinvent/jetstrap-vuexy/license)](//packagist.org/packages/Pixinvent/jetstrap-vuexy)
 
   
 
@@ -140,7 +140,7 @@ Use Composer to install Jetstrap into your new Laravel project as dev dependency
 
 ```
 
-composer require alok-vishu/jetstrap --dev
+composer require Pixinvent/jetstrap --dev
  
 
 ```
@@ -292,4 +292,4 @@ Paginator::useBootstrap();
 
   
 
-Jetstrap is open-sourced software licensed under the [MIT license](https://github.com/alok-vishu/jetstrap/blob/master/LICENSE).
+Jetstrap is open-sourced software licensed under the [MIT license](https://github.com/Pixinvent/jetstrap/blob/master/LICENSE).

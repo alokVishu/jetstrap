@@ -1,8 +1,8 @@
 <?php
 
-namespace AlokVishu\Jetstrap\Tests;
+namespace Pixinvent\Jetstrap\Tests;
 
-use AlokVishu\Jetstrap\JetstrapFacade;
+use Pixinvent\Jetstrap\JetstrapFacade;
 
 class InstallCommandTest extends TestCase
 {

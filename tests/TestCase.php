@@ -1,10 +1,10 @@
 <?php
 
-namespace AlokVishu\Jetstrap\Tests;
+namespace Pixinvent\Jetstrap\Tests;
 
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Foundation\Application;
-use AlokVishu\Jetstrap\JetstrapServiceProvider;
+use Pixinvent\Jetstrap\JetstrapServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {

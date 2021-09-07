@@ -1,6 +1,6 @@
 <?php
 
-namespace AlokVishu\Jetstrap;
+namespace Pixinvent\Jetstrap;
 
 class Jetstrap
 {
